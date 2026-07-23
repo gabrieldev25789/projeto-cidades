@@ -125,6 +125,31 @@ const cidades = [
       "Berlim tem mais pontes que Veneza",
       "A cidade tem mais de 180 km de trilhas de ciclismo integradas"
     ]
+  },
+   {
+    id: "berlim",
+    nome: "Berlim",
+    pais: "Alemanha",
+    timezone: "Europe/Berlin",
+    imagem: NY,
+    pontosTuristicos: [
+      "Portão de Brandemburgo",
+      "Muro de Berlim (East Side Gallery)",
+      "Ilha dos Museus",
+      "Alexanderplatz",
+      "Reichstag"
+    ],
+    comidasTipicas: [
+      "Currywurst",
+      "Pretzel",
+      "Döner kebab (criado por imigrantes turcos em Berlim)",
+      "Schnitzel"
+    ],
+    curiosidades: [
+      "O Döner kebab, apesar de parecer turco tradicional, foi inventado em Berlim nos anos 70",
+      "Berlim tem mais pontes que Veneza",
+      "A cidade tem mais de 180 km de trilhas de ciclismo integradas"
+    ]
   }
 ]
 
