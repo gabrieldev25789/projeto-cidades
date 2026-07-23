@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./Home.css"
-import NY from "../../assets/imgs/NY.avif"
-
-const cidades = [
-  { nome: "Nova York", timezone: "America/New_York", imagem: NY },
-  { nome: "Londres", timezone: "Europe/London", imagem: NY },
-  { nome: "Paris", timezone: "Europe/Paris", imagem: NY },
-  { nome: "São Paulo", timezone: "America/Sao_Paulo", imagem: NY },
-  { nome: "Berlim", timezone: "Europe/Berlin", imagem: NY },
-]
+import cidades from "../../../data/data.js"
 
 function getHoraCidade(timezone) {
   return new Intl.DateTimeFormat('pt-BR', {
@@ -30,10 +22,16 @@ function Home() {
   return (
     <div className="cidades-container">
       {cidades.map((cidade) => (
-        <div className="cidade-card" key={cidade.nome}>
+        <div className="cidade-card" key={cidade.id}>
           <img src={cidade.imagem} alt={cidade.nome} />
           <h3>{cidade.nome}</h3>
-          <span className="cidade-hora">{getHoraCidade(cidade.timezone)}</span>
+          <ul>
+            <li>País: {cidade.pais}</li>
+            <li>Ponto turístico 1: {cidade.pontosTuristicos[0]}</li>
+            <li>Ponto turístico 2: {cidade.pontosTuristicos[1]}</li>
+            <li>Ponto turístico 3: {cidade.pontosTuristicos[2]}</li>
+          </ul>
+          <span className="cidade-hora">Hora: {getHoraCidade(cidade.timezone)}</span>
         </div>
       ))}
     </div>
