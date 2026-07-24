@@ -3,6 +3,7 @@ import PARIS from "../src/assets/imgs/PARIS.jpg"
 import LONDRES from "../src/assets/imgs/LONDRES.avif"
 import SP from "../src/assets/imgs/SP.jpg"
 import BERLIM from "../src/assets/imgs/BERLIM.jpg"
+import TORONTO from "../src/assets/imgs/TORONTO.jpg"
 
 const cidades = [
   {
@@ -128,6 +129,31 @@ const cidades = [
       "O Döner kebab, apesar de parecer turco tradicional, foi inventado em Berlim nos anos 70",
       "Berlim tem mais pontes que Veneza",
       "A cidade tem mais de 180 km de trilhas de ciclismo integradas"
+    ]
+  }, 
+  {
+    id: "toronto",
+    nome: "Toronto",
+    pais: "Canadá",
+    timezone: "America/Toronto",
+    imagem: TORONTO,
+    pontosTuristicos: [
+      "CN Tower",
+      "Distillery District",
+      "Royal Ontario Museum",
+      "Kensington Market",
+      "Toronto Islands"
+    ],
+    comidasTipicas: [
+      "Peameal bacon sandwich",
+      "Poutine",
+      "Butter tart",
+      "Nanaimo bar"
+    ],
+    curiosidades: [
+      "Toronto é uma das cidades mais multiculturais do mundo, com mais de 160 idiomas falados",
+      "A CN Tower foi a estrutura autoportante mais alta do mundo por mais de 30 anos",
+      "A cidade tem uma rede subterrânea de túneis (PATH) com mais de 30 km conectando prédios no centro"
     ]
   }
 ]
