@@ -2,18 +2,20 @@
   background-color: #0f0f10;
   min-height: 100vh;
   color: #f4f4f5;
+  animation: fadeSlideIn 0.5s ease both;
 }
 
 .detalhes-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 2rem 2.5rem;
+  animation: heroZoom 0.7s ease both;
 }
 
 .detalhes-hero::before {
@@ -22,8 +24,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15, 15, 16, 0.15) 0%,
-    rgba(15, 15, 16, 0.85) 100%
+    rgba(15, 15, 16, 0.1) 0%,
+    rgba(15, 15, 16, 0.95) 100%
   );
 }
 
@@ -51,105 +53,144 @@
 
 .detalhes-hero-conteudo h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .detalhes-pais {
-  margin: 0.4rem 0 0;
+  margin: 0.5rem 0 0;
   color: #d4d4d8;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
-.detalhes-corpo {
-  max-width: 42rem;
+/* Cada seção ocupa a largura toda, com fundos alternando */
+.detalhes-faixa {
+  width: 100%;
+  padding: 4rem 2.5rem;
+  animation: fadeSlideIn 0.6s ease both;
+}
+
+.detalhes-faixa-clara {
+  background-color: #151517;
+}
+
+.detalhes-faixa-conteudo {
+  max-width: 64rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
 }
 
-.detalhes-secao {
-  margin-bottom: 1.25rem;
-  padding: 1rem 1.15rem;
+.detalhes-faixa-conteudo h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  color: #f4f4f5;
+}
+
+/* Grid de pontos turísticos — itens só de texto */
+.detalhes-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+.detalhes-grid li {
+  padding: 1.1rem 1.3rem;
+  text-align: center;
   background-color: #1f1f23;
   border: 1px solid #27272a;
-  border-radius: 0.75rem;
+  border-radius: 0.9rem;
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
-.detalhes-secao .secao-titulo {
+.detalhes-grid li:hover {
+  border-color: #52525b;
+  background-color: #27272a;
+  transform: translateY(-0.15rem);
+}
+
+.detalhes-grid li.ponto-ativo {
+  border-color: #71717a;
+  color: #f4f4f5;
+  font-weight: 600;
+}
+
+/* Grid de comidas — cards com imagem, nome e receita */
+.comidas-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.comidas-grid li {
+  padding: 0;
+  background-color: #1f1f23;
+  border: 1px solid #27272a;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.comidas-grid li:hover {
+  border-color: #52525b;
+  transform: translateY(-0.2rem);
+}
+
+.comidas-grid img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
   display: block;
-  color: #71717a;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid #2d2d31;
 }
 
-.detalhes-secao ul {
+.comidas-grid h3 {
+  margin: 1rem 1.2rem 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f4f4f5;
+}
+
+.comidas-grid p {
+  margin: 0 1.2rem 1.1rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #a1a1aa;
+}
+
+.detalhes-lista-curiosidades {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1.1rem;
 }
 
-.detalhes-secao li {
-  color: #d4d4d8;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.detalhes-secao li::before {
-  content: "→ ";
+.detalhes-lista-curiosidades li {
+  font-size: 1.15rem;
+  line-height: 1.6;
   color: #e4e4e4;
-}
-
-.curiosidades li::before {
-  content: none;
-}
-
-.detalhes-secao li {
-  cursor: pointer;
-}
-
-.detalhes-secao li.ponto-ativo {
-  color: #f4f4f5;
-  font-weight: 600;
-}
-
-
-.detalhes-pagina {
-  background-color: #0f0f10;
-  min-height: 100vh;
-  color: #f4f4f5;
-  animation: fadeSlideIn 0.5s ease both;
-}
-
-.detalhes-hero {
-  animation: heroZoom 0.7s ease both;
-}
-
-.detalhes-secao {
-  animation: fadeSlideIn 0.5s ease both;
-  animation-delay: 0.15s;
-}
-
-.detalhes-secao:nth-child(2) {
-  animation-delay: 0.25s;
-}
-
-.detalhes-secao:nth-child(3) {
-  animation-delay: 0.35s;
-}
-
-.detalhes-secao:nth-child(4) {
-  animation-delay: 0.45s;
+  padding-left: 1.2rem;
+  border-left: 2px solid #3f3f46;
 }
 
 @keyframes fadeSlideIn {
