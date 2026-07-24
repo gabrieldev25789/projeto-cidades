@@ -1,14 +1,18 @@
 import { useParams, Link } from 'react-router-dom'
 import cidades from "../../../data/data"
 import "./CidadeDetalhes.css"
+import { useState } from 'react'
 
 function CidadeDetalhes() {
   const { id } = useParams()
   const cidade = cidades.find((c) => c.id === id)
+  const [localSelecionado, setLocalSelecionado] = useState(null)
 
   if (!cidade) {
     return <p>Cidade não encontrada</p>
   }
+
+  const localParaMapa = localSelecionado ?? cidade.nome
 
   return (
     <div className="detalhes-pagina">
@@ -29,9 +33,31 @@ function CidadeDetalhes() {
           <span className="secao-titulo">Pontos turísticos</span>
           <ul>
             {cidade.pontosTuristicos.map((ponto) => (
-              <li key={ponto}>{ponto}</li>
+              <li
+                key={ponto}
+                onClick={() => setLocalSelecionado(ponto)}
+                className={localSelecionado === ponto ? 'ponto-ativo' : ''}
+              >
+                {ponto}
+              </li>
             ))}
           </ul>
+        </div>
+
+        <div className="detalhes-secao detalhes-mapa">
+          <span className="secao-titulo">
+            {localSelecionado ? `Localização: ${localSelecionado}` : 'Localização'}
+          </span>
+          <iframe
+            title={`Mapa de ${localParaMapa}`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(`${localParaMapa}, ${cidade.nome}`)}&output=embed`}
+            width="100%"
+            height="300"
+            style={{ border: 0, borderRadius: '0.6rem' }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         <div className="detalhes-secao">
@@ -55,5 +81,6 @@ function CidadeDetalhes() {
     </div>
   )
 }
+
 
 export default CidadeDetalhes
