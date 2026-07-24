@@ -113,3 +113,12 @@
 .curiosidades li::before {
   content: none;
 }
+
+.detalhes-secao li {
+  cursor: pointer;
+}
+
+.detalhes-secao li.ponto-ativo {
+  color: #f4f4f5;
+  font-weight: 600;
+}
