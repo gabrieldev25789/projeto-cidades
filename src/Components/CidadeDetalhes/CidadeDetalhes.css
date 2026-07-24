@@ -1,0 +1,115 @@
+.detalhes-pagina {
+  background-color: #0f0f10;
+  min-height: 100vh;
+  color: #f4f4f5;
+}
+
+.detalhes-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.detalhes-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 16, 0.15) 0%,
+    rgba(15, 15, 16, 0.85) 100%
+  );
+}
+
+.detalhes-voltar {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  color: #f4f4f5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  background-color: rgba(24, 24, 27, 0.7);
+  border: 1px solid #3f3f46;
+  border-radius: 2rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.detalhes-voltar:hover {
+  background-color: rgba(39, 39, 42, 0.9);
+}
+
+.detalhes-hero-conteudo {
+  position: relative;
+  z-index: 1;
+}
+
+.detalhes-hero-conteudo h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.detalhes-pais {
+  margin: 0.4rem 0 0;
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detalhes-corpo {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.detalhes-secao {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.15rem;
+  background-color: #1f1f23;
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
+}
+
+.detalhes-secao .secao-titulo {
+  display: block;
+  color: #71717a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #2d2d31;
+}
+
+.detalhes-secao ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.detalhes-secao li {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.detalhes-secao li::before {
+  content: "→ ";
+  color: #e4e4e4;
+}
+
+.curiosidades li::before {
+  content: none;
+}
