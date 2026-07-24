@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./Home.css"
+import Header from '../Header/Header.jsx'
 import cidades from "../../../data/data.js"
 import RelogioCidade from '../Relogio/Relogio.jsx'
 import { Link } from 'react-router-dom';
@@ -22,6 +23,8 @@ function Home() {
   }, [])
 
   return (
+    <>
+      <Header />
     <div className="cidades-container">
       {cidades.map((cidade) => (
         <Link to={`/cidade/${cidade.id}`} className="cidade-card" key={cidade.id}>
@@ -54,8 +57,9 @@ function Home() {
                 </div>
             </div>
         </Link>
-      ))}
-    </div>
+        ))}
+        </div>
+    </>
   )
 }
 
