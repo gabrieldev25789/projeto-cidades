@@ -1,4 +1,8 @@
 import  NY from "../src/assets/imgs/NY.avif"
+import PARIS from "../src/assets/imgs/PARIS.jpg"
+import LONDRES from "../src/assets/imgs/LONDRES.avif"
+import SP from "../src/assets/imgs/SP.jpg"
+import BERLIM from "../src/assets/imgs/BERLIM.jpg"
 
 const cidades = [
   {
@@ -31,7 +35,7 @@ const cidades = [
     nome: "Londres",
     pais: "Reino Unido",
     timezone: "Europe/London",
-    imagem: NY,
+    imagem: LONDRES,
     pontosTuristicos: [
       "Big Ben",
       "London Eye",
@@ -56,7 +60,7 @@ const cidades = [
     nome: "Paris",
     pais: "França",
     timezone: "Europe/Paris",
-    imagem: NY,
+    imagem: PARIS,
     pontosTuristicos: [
       "Torre Eiffel",
       "Museu do Louvre",
@@ -81,7 +85,7 @@ const cidades = [
     nome: "São Paulo",
     pais: "Brasil",
     timezone: "America/Sao_Paulo",
-    imagem: NY,
+    imagem: SP,
     pontosTuristicos: [
       "Avenida Paulista",
       "Parque Ibirapuera",
@@ -106,7 +110,7 @@ const cidades = [
     nome: "Berlim",
     pais: "Alemanha",
     timezone: "Europe/Berlin",
-    imagem: NY,
+    imagem: BERLIM,
     pontosTuristicos: [
       "Portão de Brandemburgo",
       "Muro de Berlim (East Side Gallery)",
