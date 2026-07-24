@@ -28,10 +28,10 @@ function CidadeDetalhes() {
         </div>
       </section>
 
-      <div className="detalhes-corpo">
-        <div className="detalhes-secao">
-          <span className="secao-titulo">Pontos turísticos</span>
-          <ul>
+      <section className="detalhes-faixa detalhes-faixa-clara">
+        <div className="detalhes-faixa-conteudo">
+          <h2>Pontos turísticos</h2>
+          <ul className="detalhes-grid">
             {cidade.pontosTuristicos.map((ponto) => (
               <li
                 key={ponto}
@@ -43,41 +43,49 @@ function CidadeDetalhes() {
             ))}
           </ul>
         </div>
+      </section>
 
-        <div className="detalhes-secao detalhes-mapa">
-          <span className="secao-titulo">
-            {localSelecionado ? `Localização: ${localSelecionado}` : 'Localização'}
-          </span>
+      <section className="detalhes-faixa">
+        <div className="detalhes-faixa-conteudo">
+          <h2>{localSelecionado ? `Localização: ${localSelecionado}` : 'Localização'}</h2>
           <iframe
             title={`Mapa de ${localParaMapa}`}
             src={`https://www.google.com/maps?q=${encodeURIComponent(`${localParaMapa}, ${cidade.nome}`)}&output=embed`}
             width="100%"
-            height="300"
-            style={{ border: 0, borderRadius: '0.6rem' }}
+            height="420"
+            style={{ border: 0, borderRadius: '0.75rem' }}
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
+      </section>
 
-        <div className="detalhes-secao">
-          <span className="secao-titulo">Comidas típicas</span>
-          <ul>
+      <section className="detalhes-faixa detalhes-faixa-clara">
+        <div className="detalhes-faixa-conteudo">
+          <h2>Comidas típicas</h2>
+        <ul className="comidas-grid">
             {cidade.comidasTipicas.map((comida) => (
-              <li key={comida}>{comida}</li>
+                <li key={comida.nome}>
+                <img src={comida.imagem} alt={comida.nome} />
+                <h3>{comida.nome}</h3>
+                <p>{comida.receita}</p>
+                </li>
             ))}
-          </ul>
+        </ul>
         </div>
+      </section>
 
-        <div className="detalhes-secao curiosidades">
-          <span className="secao-titulo">Curiosidades</span>
-          <ul>
+      <section className="detalhes-faixa">
+        <div className="detalhes-faixa-conteudo">
+          <h2>Curiosidades</h2>
+          <ul className="detalhes-lista-curiosidades">
             {cidade.curiosidades.map((curiosidade) => (
               <li key={curiosidade}>{curiosidade}</li>
             ))}
           </ul>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
