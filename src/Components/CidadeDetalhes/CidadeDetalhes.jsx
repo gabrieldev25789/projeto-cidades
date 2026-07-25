@@ -32,13 +32,13 @@ function CidadeDetalhes() {
         <div className="detalhes-faixa-conteudo">
           <h2>Pontos turísticos</h2>
         <ul className="detalhes-grid">
-          {cidade.pontosTuristicos.map((ponto) => (
+          {cidade.pontosTuristicos.map((ponto, index) => (
             <li
-              key={ponto.nome}
+              key={index}
               onClick={() => setLocalSelecionado(ponto.nome)}
               className={localSelecionado === ponto.nome ? 'ponto-ativo' : ''}
             >
-              <img src={ponto.imagem} alt={ponto.nome} />
+              <img src={ponto.imagem} alt={ponto.imagem} />
               {ponto.nome}
             </li>
           ))}
