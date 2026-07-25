@@ -62,6 +62,26 @@ function CidadeDetalhes() {
         </div>
       </section>
 
+      <section className="detalhes-faixa">
+        <div className="detalhes-faixa-conteudo">
+          <h2>Lugares recomendados</h2>
+          <ul className="lugares-grid">
+            {cidade.lugaresRecomendados.map((lugar) => (
+              <li
+                key={lugar.nome}
+                onClick={() => setLocalSelecionado(lugar.nome)}
+                className={localSelecionado === lugar.nome ? 'ponto-ativo' : ''}
+              >
+                <img src={lugar.imagem} alt={lugar.nome} />
+                <span className="lugar-categoria">{lugar.categoria}</span>
+                <h3>{lugar.nome}</h3>
+                <p>{lugar.descricao}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="detalhes-faixa detalhes-faixa-clara">
         <div className="detalhes-faixa-conteudo">
           <h2>Comidas típicas</h2>
