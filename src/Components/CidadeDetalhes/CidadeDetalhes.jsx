@@ -31,17 +31,18 @@ function CidadeDetalhes() {
       <section className="detalhes-faixa detalhes-faixa-clara">
         <div className="detalhes-faixa-conteudo">
           <h2>Pontos turísticos</h2>
-          <ul className="detalhes-grid">
-            {cidade.pontosTuristicos.map((ponto) => (
-              <li
-                key={ponto}
-                onClick={() => setLocalSelecionado(ponto)}
-                className={localSelecionado === ponto ? 'ponto-ativo' : ''}
-              >
-                {ponto}
-              </li>
-            ))}
-          </ul>
+        <ul className="detalhes-grid">
+          {cidade.pontosTuristicos.map((ponto) => (
+            <li
+              key={ponto.nome}
+              onClick={() => setLocalSelecionado(ponto.nome)}
+              className={localSelecionado === ponto.nome ? 'ponto-ativo' : ''}
+            >
+              <img src={ponto.imagem} alt={ponto.nome} />
+              {ponto.nome}
+            </li>
+          ))}
+        </ul>
         </div>
       </section>
 
