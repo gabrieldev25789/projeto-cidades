@@ -37,7 +37,6 @@ import POUTINE from "../src/assets/imgs/comidas/poutine.jpg"
 import BUTTER_TART from "../src/assets/imgs/comidas/butter-tart.jpg"
 import NANAIMO_BAR from "../src/assets/imgs/comidas/nanaimo-bar.jpg"
 */
-
 const cidades = [
   {
     id: "nova-york",
@@ -72,6 +71,32 @@ const cidades = [
         nome: "Hot dog de rua",
         imagem: TORONTO,
         receita: "Cozinhe a salsicha na água ou grelha até dourar, sirva no pão macio e finalize com mostarda, ketchup, cebola e chucrute a gosto."
+      }
+    ],
+    lugaresRecomendados: [
+      {
+        nome: "Katz's Delicatessen",
+        categoria: "Restaurante",
+        imagem: NY,
+        descricao: "Delicatessen clássica desde 1888, famosa pelo sanduíche de pastrami."
+      },
+      {
+        nome: "Please Don't Tell (PDT)",
+        categoria: "Bar",
+        imagem: NY,
+        descricao: "Speakeasy escondido atrás de uma cabine telefônica no East Village."
+      },
+      {
+        nome: "Strand Book Store",
+        categoria: "Loja",
+        imagem: NY,
+        descricao: "Livraria histórica com mais de 30 km de estantes, perto do Union Square."
+      },
+      {
+        nome: "Smorgasburg",
+        categoria: "Mercado",
+        imagem: NY,
+        descricao: "Feira gastronômica de rua aos fins de semana no Williamsburg."
       }
     ],
     curiosidades: [
@@ -115,6 +140,32 @@ const cidades = [
         receita: "Refogue carne moída de cordeiro com cebola, cenoura e ervilha em molho encorpado. Cubra com purê de batata e leve ao forno até a superfície dourar."
       }
     ],
+    lugaresRecomendados: [
+      {
+        nome: "Borough Market",
+        categoria: "Mercado",
+        imagem: LONDRES,
+        descricao: "Um dos mercados de comida mais antigos e movimentados de Londres, perto da London Bridge."
+      },
+      {
+        nome: "The Ten Bells",
+        categoria: "Bar",
+        imagem: LONDRES,
+        descricao: "Pub histórico do século XVIII no East End, conhecido por sua ligação com o Whitechapel vitoriano."
+      },
+      {
+        nome: "Dishoom",
+        categoria: "Restaurante",
+        imagem: LONDRES,
+        descricao: "Rede inspirada nos antigos cafés persas de Bombaim, famosa pelo café da manhã indiano."
+      },
+      {
+        nome: "Portobello Road Market",
+        categoria: "Loja",
+        imagem: LONDRES,
+        descricao: "Rua de antiguidades, vintage e artesanato em Notting Hill, mais movimentada aos sábados."
+      }
+    ],
     curiosidades: [
       "O metrô de Londres (The Tube) é o mais antigo do mundo, inaugurado em 1863",
       "Não existe um prédio em Londres mais alto que a Big Ben no centro histórico por lei de preservação",
@@ -154,6 +205,32 @@ const cidades = [
         nome: "Baguete com queijos franceses",
         imagem: TORONTO,
         receita: "Sove uma massa simples de farinha, água, fermento e sal, deixando fermentar bem. Asse em forno bem quente com vapor para formar a casca crocante. Sirva fatiada com queijos variados."
+      }
+    ],
+    lugaresRecomendados: [
+      {
+        nome: "Le Comptoir du Relais",
+        categoria: "Restaurante",
+        imagem: PARIS,
+        descricao: "Bistrô parisiense clássico em Saint-Germain-des-Prés, sempre concorrido."
+      },
+      {
+        nome: "Little Red Door",
+        categoria: "Bar",
+        imagem: PARIS,
+        descricao: "Coquetelaria premiada com drinks autorais, escondida no Marais."
+      },
+      {
+        nome: "Marché des Enfants Rouges",
+        categoria: "Mercado",
+        imagem: PARIS,
+        descricao: "O mercado coberto mais antigo de Paris, com bancas de comida do mundo todo."
+      },
+      {
+        nome: "Shakespeare and Company",
+        categoria: "Loja",
+        imagem: PARIS,
+        descricao: "Livraria icônica em frente à Notre-Dame, ponto de encontro de escritores há décadas."
       }
     ],
     curiosidades: [
@@ -197,6 +274,32 @@ const cidades = [
         receita: "Prepare uma massa mais grossa e macia que a napolitana. Cubra com bastante recheio e queijo, e asse em forno de pedra bem quente."
       }
     ],
+    lugaresRecomendados: [
+      {
+        nome: "Mocotó",
+        categoria: "Restaurante",
+        imagem: SP,
+        descricao: "Referência em comida nordestina na Vila Medeiros, criado por Rodrigo Oliveira."
+      },
+      {
+        nome: "Bar Filial",
+        categoria: "Bar",
+        imagem: SP,
+        descricao: "Botequim tradicional em Pinheiros, ponto de encontro desde os anos 1980."
+      },
+      {
+        nome: "Feira da Praça Benedito Calixto",
+        categoria: "Mercado",
+        imagem: SP,
+        descricao: "Feira de antiguidades e artesanato aos sábados, com música ao vivo em Pinheiros."
+      },
+      {
+        nome: "Livraria Cultura (Conjunto Nacional)",
+        categoria: "Loja",
+        imagem: SP,
+        descricao: "Uma das maiores livrarias da cidade, na Avenida Paulista."
+      }
+    ],
     curiosidades: [
       "Tem a maior frota de helicópteros do mundo entre as cidades",
       "É a cidade com maior população de descendentes de japoneses fora do Japão",
@@ -236,6 +339,32 @@ const cidades = [
         nome: "Schnitzel",
         imagem: TORONTO,
         receita: "Bata um filé de carne até ficar fino, passe por farinha, ovo e farinha de rosca, e frite em bastante óleo até dourar dos dois lados."
+      }
+    ],
+    lugaresRecomendados: [
+      {
+        nome: "Prater Garten",
+        categoria: "Bar",
+        imagem: BERLIM,
+        descricao: "O beer garden mais antigo de Berlim, em Prenzlauer Berg."
+      },
+      {
+        nome: "Markthalle Neun",
+        categoria: "Mercado",
+        imagem: BERLIM,
+        descricao: "Mercado coberto em Kreuzberg, famoso pelas noites de street food às quintas."
+      },
+      {
+        nome: "Curry 36",
+        categoria: "Restaurante",
+        imagem: BERLIM,
+        descricao: "Um dos lugares mais tradicionais para comer currywurst na cidade."
+      },
+      {
+        nome: "Mauerpark Flohmarkt",
+        categoria: "Loja",
+        imagem: BERLIM,
+        descricao: "Feira de pulgas de domingo perto do antigo Muro de Berlim, com karaokê ao ar livre."
       }
     ],
     curiosidades: [
@@ -279,6 +408,32 @@ const cidades = [
         receita: "Monte em camadas: uma base de biscoito com coco e cacau, um creme de manteiga com baunilha no meio, e uma cobertura de chocolate derretido por cima. Leve à geladeira até firmar."
       }
     ],
+    lugaresRecomendados: [
+      {
+        nome: "St. Lawrence Market",
+        categoria: "Mercado",
+        imagem: TORONTO,
+        descricao: "Considerado um dos melhores mercados de comida do mundo, no centro histórico."
+      },
+      {
+        nome: "The Rex Hotel Jazz & Blues Bar",
+        categoria: "Bar",
+        imagem: TORONTO,
+        descricao: "Casa de jazz ao vivo tradicional na Queen Street West."
+      },
+      {
+        nome: "Kensington Market (lojas)",
+        categoria: "Loja",
+        imagem: TORONTO,
+        descricao: "Bairro boêmio cheio de brechós, lojas vintage e murais coloridos."
+      },
+      {
+        nome: "Pai Northern Thai Kitchen",
+        categoria: "Restaurante",
+        imagem: TORONTO,
+        descricao: "Um dos restaurantes tailandeses mais elogiados do Distillery District."
+      }
+    ],
     curiosidades: [
       "Toronto é uma das cidades mais multiculturais do mundo, com mais de 160 idiomas falados",
       "A CN Tower foi a estrutura autoportante mais alta do mundo por mais de 30 anos",
@@ -286,5 +441,6 @@ const cidades = [
     ]
   }
 ]
+
 
 export default cidades;
