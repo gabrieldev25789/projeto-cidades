@@ -90,7 +90,7 @@
   color: #f4f4f5;
 }
 
-/* Grid de pontos turísticos — itens só de texto */
+/* Grid de pontos turísticos */
 .detalhes-grid {
   list-style: none;
   margin: 0;
@@ -111,10 +111,19 @@
   font-weight: 500;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   min-height: 3.5rem;
   transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.detalhes-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.6rem;
 }
 
 .detalhes-grid li:hover {
