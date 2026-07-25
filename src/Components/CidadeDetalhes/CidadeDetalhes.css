@@ -138,6 +138,53 @@
   font-weight: 600;
 }
 
+.lugares-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.lugares-grid li {
+  background-color: #1f1f23;
+  border: 1px solid #27272a;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  color: #d4d4d8;
+  cursor: pointer;
+}
+
+.lugares-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.lugar-categoria {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #a1a1aa;
+  margin-bottom: 0.3rem;
+}
+
+.lugares-grid h3 {
+  margin: 0 0 0.4rem;
+  color: #f4f4f5;
+}
+
+.lugares-grid p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a1a1aa;
+}
+
 /* Grid de comidas — cards com imagem, nome e receita */
 .comidas-grid {
   list-style: none;
