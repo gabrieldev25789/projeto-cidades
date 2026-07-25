@@ -46,11 +46,11 @@ const cidades = [
     timezone: "America/New_York",
     imagem: NY,
     pontosTuristicos: [
-      "Estátua da Liberdade",
-      "Central Park",
-      "Times Square",
-      "Empire State Building",
-      "Brooklyn Bridge"
+      { nome: "Estátua da Liberdade", imagem: NY },
+      { nome: "Central Park", imagem: NY },
+      { nome: "Times Square", imagem: NY },
+      { nome: "Empire State Building", imagem: NY },
+      { nome: "Brooklyn Bridge", imagem: NY }
     ],
     comidasTipicas: [
       {
@@ -87,11 +87,11 @@ const cidades = [
     timezone: "Europe/London",
     imagem: LONDRES,
     pontosTuristicos: [
-      "Big Ben",
-      "London Eye",
-      "Palácio de Buckingham",
-      "Tower Bridge",
-      "British Museum"
+      { nome: "Big Ben", imagem: LONDRES },
+      { nome: "London Eye", imagem: LONDRES },
+      { nome: "Palácio de Buckingham", imagem: LONDRES },
+      { nome: "Tower Bridge", imagem: LONDRES },
+      { nome: "British Museum", imagem: LONDRES }
     ],
     comidasTipicas: [
       {
@@ -128,11 +128,11 @@ const cidades = [
     timezone: "Europe/Paris",
     imagem: PARIS,
     pontosTuristicos: [
-      "Torre Eiffel",
-      "Museu do Louvre",
-      "Notre-Dame",
-      "Arco do Triunfo",
-      "Montmartre"
+      { nome: "Torre Eiffel", imagem: PARIS },
+      { nome: "Museu do Louvre", imagem: PARIS },
+      { nome: "Notre-Dame", imagem: PARIS },
+      { nome: "Arco do Triunfo", imagem: PARIS },
+      { nome: "Montmartre", imagem: PARIS }
     ],
     comidasTipicas: [
       {
@@ -169,11 +169,11 @@ const cidades = [
     timezone: "America/Sao_Paulo",
     imagem: SP,
     pontosTuristicos: [
-      "Avenida Paulista",
-      "Parque Ibirapuera",
-      "MASP",
-      "Mercado Municipal",
-      "Beco do Batman"
+      { nome: "Avenida Paulista", imagem: SP },
+      { nome: "Parque Ibirapuera", imagem: SP },
+      { nome: "MASP", imagem: SP },
+      { nome: "Mercado Municipal", imagem: SP },
+      { nome: "Beco do Batman", imagem: SP }
     ],
     comidasTipicas: [
       {
@@ -210,11 +210,11 @@ const cidades = [
     timezone: "Europe/Berlin",
     imagem: BERLIM,
     pontosTuristicos: [
-      "Portão de Brandemburgo",
-      "Muro de Berlim (East Side Gallery)",
-      "Ilha dos Museus",
-      "Alexanderplatz",
-      "Reichstag"
+      { nome: "Portão de Brandemburgo", imagem: BERLIM },
+      { nome: "Muro de Berlim (East Side Gallery)", imagem: BERLIM },
+      { nome: "Ilha dos Museus", imagem: BERLIM },
+      { nome: "Alexanderplatz", imagem: BERLIM },
+      { nome: "Reichstag", imagem: BERLIM }
     ],
     comidasTipicas: [
       {
@@ -251,11 +251,11 @@ const cidades = [
     timezone: "America/Toronto",
     imagem: TORONTO,
     pontosTuristicos: [
-      "CN Tower",
-      "Distillery District",
-      "Royal Ontario Museum",
-      "Kensington Market",
-      "Toronto Islands"
+      { nome: "CN Tower", imagem: TORONTO },
+      { nome: "Distillery District", imagem: TORONTO },
+      { nome: "Royal Ontario Museum", imagem: TORONTO },
+      { nome: "Kensington Market", imagem: TORONTO },
+      { nome: "Toronto Islands", imagem: TORONTO }
     ],
     comidasTipicas: [
       {
@@ -287,4 +287,4 @@ const cidades = [
   }
 ]
 
-export default cidades
+export default cidades;
