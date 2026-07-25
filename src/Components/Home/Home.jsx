@@ -51,9 +51,9 @@ function Home({ filtrado, setFiltrado }) {
                     <div className="cidade-secao">
                         <span className="secao-titulo">Pontos turísticos</span>
                         <ul>
-                            <li>{cidade.pontosTuristicos[0]}</li>
-                            <li>{cidade.pontosTuristicos[1]}</li>
-                            <li>{cidade.pontosTuristicos[2]}</li>
+                            <li>{cidade.pontosTuristicos[0].nome}</li>
+                            <li>{cidade.pontosTuristicos[1].nome}</li>
+                            <li>{cidade.pontosTuristicos[2].nome}</li>
                         </ul>
                     </div>
 
