@@ -36,7 +36,9 @@ function Home({ filtrado, setFiltrado }) {
           <p>Nenhuma cidade encontrada</p>
         ) : (
           cidadesExibidas.map((cidade) => (
+          <>
             <Link to={`/cidade/${cidade.id}`} className="cidade-card" key={cidade.id}>
+                <h2>{cidade.continente}</h2>
                 <img src={cidade.imagem} alt={cidade.nome} />
                 <div className="cidade-hora">
                     <span>Horário local</span>
@@ -66,6 +68,7 @@ function Home({ filtrado, setFiltrado }) {
                     </div>
                 </div>
             </Link>
+          </>
           ))
         )}
       </div>
