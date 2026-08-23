@@ -16,7 +16,7 @@ function getHoraCidade(timezone) {
   }).format(new Date())
 }
 
-function Home({ filtrado, setFiltrado, filtradoContinente, setFiltradoContinente }) {
+function Home({ filtrado, setFiltrado, filtradoContinente, setFiltradoContinente, filtradoPais, setFiltradoPais }) {
   const [hora, setHora] = useState(new Date())
   console.log(hora)
 
@@ -26,19 +26,19 @@ function Home({ filtrado, setFiltrado, filtradoContinente, setFiltradoContinente
   }, [])
 
   function getCidadesExibidas() {
-    if (!filtrado && !filtradoContinente) return cidades
+      if (!filtrado && !filtradoContinente && !filtradoPais) return cidades
 
-    const idsNome = filtrado ? new Set(filtrado.map(c => c.id)) : null
-    const idsContinente = filtradoContinente ? new Set(filtradoContinente.map(c => c.id)) : null
+      const idsNome = filtrado ? new Set(filtrado.map(c => c.id)) : null
+      const idsContinente = filtradoContinente ? new Set(filtradoContinente.map(c => c.id)) : null
+      const idsPais = filtradoPais ? new Set(filtradoPais.map(c => c.id)) : null
 
-    return cidades.filter((c) => {
-      const bateNome = idsNome ? idsNome.has(c.id) : false
-      const bateContinente = idsContinente ? idsContinente.has(c.id) : false
-      if (idsNome && idsContinente) return bateNome || bateContinente
-      if (idsNome) return bateNome
-      if (idsContinente) return bateContinente
-      return true
-    })
+      return cidades.filter((c) => {
+        const bateNome = idsNome ? idsNome.has(c.id) : false
+        const bateContinente = idsContinente ? idsContinente.has(c.id) : false
+        const batePais = idsPais ? idsPais.has(c.id) : false
+
+        return bateNome || bateContinente || batePais
+      })
   }
 
   const cidadesExibidas = getCidadesExibidas()
@@ -46,7 +46,7 @@ function Home({ filtrado, setFiltrado, filtradoContinente, setFiltradoContinente
   return (
     <>
       <Header />
-      <Busca setFiltrado={setFiltrado} setFiltradoContinente={setFiltradoContinente}/>
+      <Busca setFiltrado={setFiltrado} setFiltradoContinente={setFiltradoContinente} setFiltradoPais={setFiltradoPais}/>
 
       <div className="cidades-container">
         {cidadesExibidas.length === 0 ? (
