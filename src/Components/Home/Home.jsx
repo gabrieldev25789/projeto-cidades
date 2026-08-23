@@ -7,6 +7,7 @@ import RelogioCidade from '../Relogio/Relogio.jsx'
 import { Link } from 'react-router-dom';
 import Busca from "../Busca/Busca.jsx"
 
+
 function getHoraCidade(timezone) {
   return new Intl.DateTimeFormat('pt-BR', {
     timeZone: timezone,
@@ -15,7 +16,7 @@ function getHoraCidade(timezone) {
   }).format(new Date())
 }
 
-function Home({ filtrado, setFiltrado }) {
+function Home({ filtrado, setFiltrado, filtradoContinente, setFiltradoContinente }) {
   const [hora, setHora] = useState(new Date())
   console.log(hora)
 
@@ -24,19 +25,34 @@ function Home({ filtrado, setFiltrado }) {
     return () => clearInterval(intervalo)
   }, [])
 
-  const cidadesExibidas = filtrado ?? cidades
+  function getCidadesExibidas() {
+    if (!filtrado && !filtradoContinente) return cidades
+
+    const idsNome = filtrado ? new Set(filtrado.map(c => c.id)) : null
+    const idsContinente = filtradoContinente ? new Set(filtradoContinente.map(c => c.id)) : null
+
+    return cidades.filter((c) => {
+      const bateNome = idsNome ? idsNome.has(c.id) : false
+      const bateContinente = idsContinente ? idsContinente.has(c.id) : false
+      if (idsNome && idsContinente) return bateNome || bateContinente
+      if (idsNome) return bateNome
+      if (idsContinente) return bateContinente
+      return true
+    })
+  }
+
+  const cidadesExibidas = getCidadesExibidas()
 
   return (
     <>
       <Header />
-      <Busca setFiltrado={setFiltrado} />
+      <Busca setFiltrado={setFiltrado} setFiltradoContinente={setFiltradoContinente}/>
 
       <div className="cidades-container">
         {cidadesExibidas.length === 0 ? (
           <p>Nenhuma cidade encontrada</p>
         ) : (
           cidadesExibidas.map((cidade) => (
-          <>
             <Link to={`/cidade/${cidade.id}`} className="cidade-card" key={cidade.id}>
                 <h2>{cidade.continente}</h2>
                 <img src={cidade.imagem} alt={cidade.nome} />
@@ -68,7 +84,6 @@ function Home({ filtrado, setFiltrado }) {
                     </div>
                 </div>
             </Link>
-          </>
           ))
         )}
       </div>
