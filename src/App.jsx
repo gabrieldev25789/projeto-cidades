@@ -9,6 +9,7 @@ function App() {
   
   const [filtrado, setFiltrado] = useState(null)
   const [filtradoContinente, setFiltradoContinente] = useState(null)
+  const [filtradoPais, setFiltradoPais] = useState(null)
 
   return (
     <>
@@ -18,7 +19,9 @@ function App() {
         filtrado={filtrado} 
         setFiltrado={setFiltrado}
         filtradoContinente={filtradoContinente} 
-        setFiltradoContinente={setFiltradoContinente}/>} />
+        setFiltradoContinente={setFiltradoContinente}
+        filtradoPais={filtradoPais}
+        setFiltradoPais={setFiltradoPais} />}/>
         <Route path="/cidade/:id" element={<CidadeDetalhes />} />
       </Routes>
     </>
