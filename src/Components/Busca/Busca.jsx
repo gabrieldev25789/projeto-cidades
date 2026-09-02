@@ -9,40 +9,27 @@ function Busca({ setFiltrado, setFiltradoContinente, setFiltradoPais }) {
     const [valorContinente, setValorContinente] = useState("")
     const [valorPais, setValorPais] = useState("")
 
-    function buscarPorNome(texto) {
-    if (texto.trim() === "") return setFiltrado(null)
-    setFiltrado(cidades.filter(c => c.nome.toLowerCase().includes(texto.toLowerCase())))
+    function criarBusca(campo, setValorCampo, setFiltradoCampo) {
+        return function (e) {
+            const texto = e.target.value
+            setValorCampo(texto)
+
+            if (texto.trim() === "") {
+                setFiltradoCampo(null)
+                return
+            }
+
+            setFiltradoCampo(
+                cidades.filter(c => c[campo].toLowerCase().includes(texto.toLowerCase()))
+            )
+        }
     }
 
-    function buscarPorContinente(texto) {
-    if (texto.trim() === "") return setFiltradoContinente(null)
-    setFiltradoContinente(cidades.filter(c => c.continente.toLowerCase().includes(texto.toLowerCase())))
-    }
+    const handleChange = criarBusca("nome", setValor, setFiltrado)
+    const handleChangeContinente = criarBusca("continente", setValorContinente, setFiltradoContinente)
+    const handleChangePais = criarBusca("pais", setValorPais, setFiltradoPais)
 
-    function buscarPorPais(texto) {
-    if (texto.trim() === "") return setFiltradoPais(null)
-    setFiltradoPais(cidades.filter(c => c.pais.toLowerCase().includes(texto.toLowerCase())))
-    }
-
-    function handleChange(e) {
-        const texto = e.target.value
-        setValor(texto)
-        buscarPorNome(texto)
-    }
-
-    function handleChangeContinente(e){
-        const texto = e.target.value 
-        setValorContinente(texto)
-        buscarPorContinente(texto)
-    }
-
-    function handleChangePais(e){
-        const texto = e.target.value 
-        setValorPais(texto)
-        buscarPorPais(texto)
-    }
-
-return (
+    return (
         <>
             <div className="busca-container">
                 <svg className="busca-icone" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +100,6 @@ return (
                 )}
             </div>
         </>
-    
     )
 }
 
